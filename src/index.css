@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #02000a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #fff;
+}
+
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+[lang="ta"] {
+  font-family: 'Noto Sans Tamil', 'Arial Unicode MS', sans-serif;
+  line-height: 1.6;
+}
+
+[lang="ta"] button, [lang="ta"] input, [lang="ta"] textarea {
+  font-family: 'Noto Sans Tamil', sans-serif;
+  line-height: 1.6;
+}
+
+.glass {
+  background: rgba(10, 5, 28, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 16px;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #fef08a 0%, #fbbf24 35%, #f97316 65%, #fef08a 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShift 4s ease infinite;
+}
+
+@keyframes goldShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0px) scale(1); opacity: 1; }
+  100% { transform: translateY(-30px) scale(0); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(251,191,36,0.4); }
+  50%       { box-shadow: 0 0 40px rgba(251,191,36,0.8); }
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #92400e 0%, #d97706 50%, #b45309 100%);
+  background-size: 200% 200%;
+  animation: goldShift 3s ease infinite;
+  color: #fff;
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 35px rgba(251, 191, 36, 0.65);
+}
+
+.btn-gold:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.entrance-anim {
+  animation: fadeIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom festive gold scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #02000a;
+}
+::-webkit-scrollbar-thumb {
+  background: #78350f;
+  border-radius: 4px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
